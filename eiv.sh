@@ -67,12 +67,12 @@ while [ $timeCheck == 0 ];do
 	sntp -sS time.google.com &> /dev/null || sntp -sS time.apple.com &> /dev/null;
     if [[ $? > 0 && $count < 4 ]];then
         echo -e "Syncing NTP Apple server with local machine date & time ATTEMPT: $count... ${RED}FAILED${NOCOLOR}";
-        sleep 2
+        sleep 2;
         count=$((count+1));
     elif [[ $? > 0 && $count == 4 ]];then
         timeCheck=1;
-        echo -e "\n>${RED} NTP not available${NOCOLOR}"
-        echo -e "> ${RED}Program terminated\n${NOCOLOR}"
+        echo -e "\n>${RED} NTP not available${NOCOLOR}";
+        echo -e "> ${RED}Program terminated\n${NOCOLOR}";
         exit 1
     else
         timeCheck=1;
@@ -89,23 +89,23 @@ echo -e "Please verify device wireless MAC address >> ${BGGREEN}$ethMac${NOCOLOR
 
 # Product version check
 echo -e "\n${BOLD}4| MACOS VERSION CHECK${NOCOLOR}\n";
-verVer=$(sw_vers | sed -n '/ProductVersion/p' | cut -c20-21)
+verVer=$(sw_vers | sed -n '/ProductVersion/p' | cut -c20-21);
 
 if (( $verVer >= 15 )); then
     hdiutil attach https://tieclip.corp.google.com/eiv.dmg &> /dev/null;
     echo -e "Verifying OS version ... ${GREEN}VERSION SUPPORTED${NOCOLOR}\n";
-    read -p "$(echo -e Press any key to initiate ${RED}EIV process${NOCOLOR} ...)"
+    read -p "$(echo -e Press any key to initiate ${RED}EIV process${NOCOLOR} ...)";
 else
     echo -e "Verifying OS version$ ... ${RED}VERSION NOT SUPPORTED, SECOND BOOT TO RM NEEDED\n${NOCOLOR}";
     read -p "Press any key to reboot machine ...";
-    echo -e "${RED}CMD + OPTION + R [Hold on power on]${NOCOLOR}"
-    sleep 1.5
-    reboot || shutdown -r
-    echo -e "\nRebooting now ... ${RED}EXECUTED\n${NOCOLOR}"
-    exit 0
+    echo -e "${RED}CMD + OPTION + R [Hold on power on]${NOCOLOR}";
+    sleep 1.5;
+    reboot || shutdown -r;
+    echo -e "\nRebooting now ... ${RED}EXECUTED\n${NOCOLOR}";
+    exit 0;
 fi
 
 # Running EIV Command
 echo -e "\n${BOLD}5| RUNNING EIV${NOCOLOR}\n";
-echo -e "Running EIV ... ${GREEN}EXECUTED${NOCOLOR}"
+echo -e "Running EIV ... ${GREEN}EXECUTED${NOCOLOR}";
 /Volumes/eiv/Eiv.app/Contents/MacOS/Eiv;
