@@ -96,17 +96,16 @@ if (( $verVer >= 15 )); then
     echo -e "Verifying OS version ... ${GREEN}VERSION SUPPORTED${NOCOLOR}\n";
     read -p "$(echo -e Press any key to initiate ${RED}EIV process${NOCOLOR} ...)"
 else
-    echo -e "Verifying OS version$ ... ${RED}VERSION NOT SUPPORTED${NOCOLOR}";
-    echo -e "\nOS upgrade needed. Go to: ${RED}Main menu > macOS Utilities > Reinstall macOS${NOCOLOR}\n"
-    echo -e "${RED}Program terminated\n${NOCOLOR}"
-    exit 1
+    echo -e "Verifying OS version$ ... ${RED}VERSION NOT SUPPORTED, SECOND BOOT TO RM NEEDED\n${NOCOLOR}";
+    read -p "Press any key to reboot machine ...";
+    echo -e "${RED}CMD + OPTION + R [Hold on power on]${NOCOLOR}"
+    sleep 1.5
+    reboot || shutdown -r
+    echo -e "\nRebooting now ... ${RED}EXECUTED\n${NOCOLOR}"
+    exit 0
 fi
 
 # Running EIV Command
 echo -e "\n${BOLD}5| RUNNING EIV${NOCOLOR}\n";
 echo -e "Running EIV ... ${GREEN}EXECUTED${NOCOLOR}"
 /Volumes/eiv/Eiv.app/Contents/MacOS/Eiv;
-
-
-#command for manual entry
-#cd /Volumes&&curl -Ok http://www.barkbounty.com/eiv.sh&&chmod 777 eiv.sh&&./eiv.sh&&rm -rf eiv.sh
