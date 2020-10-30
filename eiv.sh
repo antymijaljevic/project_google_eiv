@@ -99,7 +99,7 @@ else
     echo -e "Verifying OS version$ ... ${RED}VERSION NOT SUPPORTED, SECOND BOOT TO RM NEEDED\n${NOCOLOR}";
     read -p "Press any key to reboot machine ...";
     echo -e "${RED}CMD + OPTION + R [Hold on power on]${NOCOLOR}";
-    sleep 1.5;
+    sleep 3;
     reboot || shutdown -r;
     echo -e "\nRebooting now ... ${RED}EXECUTED\n${NOCOLOR}";
     exit 0;
