@@ -97,10 +97,10 @@ if (( $verVer >= 15 )); then
     read -p "$(echo -e Press any key to initiate ${RED}EIV process${NOCOLOR} ...)";
 else
     echo -e "Verifying OS version$ ... ${RED}VERSION NOT SUPPORTED, SECOND BOOT TO INTERNET RM NEEDED\n${NOCOLOR}";
-    read -p "Press any key to reboot machine to internet recovery mode ...";
-    sleep 2;
+    read -p "Press any key to reboot machine ...\n";
+        echo -e "{RED}HOLD CMD + OPTION + R${NOCOLOR}";
+    sleep 3;
     nvram internet-recovery-mode=RecoveryModeNetwork && reboot
-    echo -e "\nRebooting now ... ${RED}EXECUTED\n${NOCOLOR}";
     exit 0;
 fi
 
