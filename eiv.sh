@@ -45,7 +45,7 @@ ${RED}#       #    # #    # #    # #      #         #        #  #     #
 ${YELLOW}#     # #    # #    # #  ### #      #         #        #   #   #  
 #     # #    # #    # #    # #      #         #        #    # #${NOCOLOR}
  ${GREEN}#####   ####   ####   ####  ###### ######    ####### ###    #  
-******************** EMT Dublin | Beta 0.1 **********************${NOCOLOR}
+******************** EMT Dublin | Stable ver 0.1 **********************${NOCOLOR}
 ";
 
 # Printing machine info: product version, current date, hostname, serial number, wireless MAC address
