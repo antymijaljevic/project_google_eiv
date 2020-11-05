@@ -98,7 +98,7 @@ if (( $verVer >= 15 )); then
 else
     echo -e "Verifying OS version$ ... ${RED}VERSION NOT SUPPORTED, SECOND BOOT TO INTERNET RM NEEDED\n${NOCOLOR}";
     read -p "Press any key to reboot machine ...\n";
-        echo -e "{RED}HOLD CMD + OPTION + R${NOCOLOR}";
+        echo -e "${RED}HOLD CMD + OPTION + R${NOCOLOR}";
     sleep 3;
     nvram internet-recovery-mode=RecoveryModeNetwork && reboot
     exit 0;
