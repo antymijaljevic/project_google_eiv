@@ -92,7 +92,7 @@ echo -e "\n${BOLD}4| MACOS VERSION CHECK${NOCOLOR}\n";
 verVer=$(sw_vers | sed -n '/ProductVersion/p' | cut -c20-21);
 
 if (( $verVer >= 15 )); then
-    hdiutil attach https://tieclip.corp.google.com/eiv.dmg &> /dev/null;
+    hdiutil attach https:/xxxxxxxxxx/xxxx.dmg &> /dev/null;
     echo -e "Verifying OS version ... ${GREEN}VERSION SUPPORTED${NOCOLOR}\n";
     read -p "$(echo -e Press any key to initiate ${RED}EIV process${NOCOLOR} ...)";
 else
