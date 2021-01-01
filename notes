@@ -1,1 +1,0 @@
-#code='x="";y="";read -p "What is your x?" x;read -p "What is your y?" y;z=$(($x+$y)); echo $z;' && echo $code > program.sh && chmod +x program.sh && ./program.sh
